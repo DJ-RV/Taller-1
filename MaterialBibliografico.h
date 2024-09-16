@@ -1,18 +1,16 @@
-#ifndef MATERIALBIBLIOGRAFICO_H
-#define MATERIALBIBLIOGRAFICO_H
+#pragma once
 #include <iostream>
 
-class MaterialBibliografico
-{
+class MaterialBibliografico {
 private:
     std::string Name;
     int isbn;
     std::string Autor;
-    int lended;
+    bool lended;
 public:
-    MaterialBibliografico();
+    MaterialBibliografico(std::string Name, int isbn, std::string Autor, bool leaned);
     void ChangeStatus();
     void ShowInfo();
 };
-}hjgahijohjlasfdhasf
-#endif
+
+
