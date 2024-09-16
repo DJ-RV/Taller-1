@@ -3,7 +3,7 @@
 
 int main() {
 
-    std::cout << "lol" << std::endl;
+    std::cout << "ce" << std::endl;
 
     return 0;
 }
