@@ -14,5 +14,5 @@ public:
     void ChangeStatus();
     void ShowInfo();
 };
-
+}hjgahijohjlasfdhasf
 #endif
