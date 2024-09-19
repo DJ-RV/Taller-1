@@ -10,7 +10,7 @@ private:
 public:
     MaterialBibliografico(std::string Name, int isbn, std::string Autor, bool leaned);
     void ChangeStatus();
-    void ShowInfo();
+    virtual std::string ShowInfo();
 };
 
 
