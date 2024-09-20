@@ -9,4 +9,3 @@ Revista::Revista(std::string Name, int isbn, std::string Autor, int lendedId, in
 std::string Revista::ShowInfo() {
     return "ola soi una rebista ";
 }
-
