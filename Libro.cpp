@@ -1,8 +1,9 @@
 #include "Libro.h"
+#include <string>
 
-Libro::Libro(std::string Name, int isbn, std::string Autor, int lendedId, std::string fechaPublicación, std::string resumen)
+Libro::Libro(std::string Name, int isbn, std::string Autor, int lendedId, std::string fechaPublicacion, std::string resumen)
     : MaterialBibliografico(Name, isbn, Autor, lendedId)
-    , fechaPublicación{fechaPublicación} 
+    , fechaPublicacion{fechaPublicacion} 
     , resumen{resumen}{
 	}
 

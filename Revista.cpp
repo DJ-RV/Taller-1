@@ -1,4 +1,5 @@
 #include "Revista.h"
+#include <string>
 
 Revista::Revista(std::string Name, int isbn, std::string Autor, int lendedId, int numeroEdicion, int mesPublicacion)
     : MaterialBibliografico(Name, isbn, Autor, lendedId)

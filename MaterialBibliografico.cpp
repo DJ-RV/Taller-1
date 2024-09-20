@@ -1,4 +1,5 @@
 #include "MaterialBibliografico.h"
+#include <string>
 
 MaterialBibliografico::MaterialBibliografico
     (std::string Name, int isbn, std::string Autor, int lendedId)

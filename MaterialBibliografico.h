@@ -1,5 +1,7 @@
 #pragma once
-#include <iostream>
+#ifndef MATERIALBIBLIOGRAFICO_H
+#define MATERIALBIBLIOGRAFICO_H
+#include <string>
 
 class MaterialBibliografico {
 protected:
@@ -16,4 +18,4 @@ public:
     void SetLendedId(int nlendedId);
 };
 
-
+#endif
