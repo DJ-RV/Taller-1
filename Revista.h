@@ -8,6 +8,6 @@ private:
     int numeroEdicion;
     int mesPublicacion;
 public:
-    Revista(std::string Name, int isbn, std::string Autor, bool leaned, int numeroEdicion, int mesPublicacion);
+    Revista(std::string Name, int isbn, std::string Autor, int lendedId, int numeroEdicion, int mesPublicacion);
     std::string ShowInfo() override;
 };

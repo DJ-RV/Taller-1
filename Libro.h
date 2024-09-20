@@ -8,6 +8,6 @@ private:
     std::string fechaPublicación;
     std::string resumen;
 public:
-    Libro(std::string Name, int isbn, std::string Autor, bool leaned, std::string fechaPublicación, std::string resumen);
+    Libro(std::string Name, int isbn, std::string Autor, int lendedId, std::string fechaPublicación, std::string resumen);
     std::string ShowInfo() override;
 };

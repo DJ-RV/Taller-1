@@ -1,7 +1,7 @@
 #include "Revista.h"
 
-Revista::Revista(std::string Name, int isbn, std::string Autor, bool leaned, int numeroEdicion, int mesPublicacion)
-    : MaterialBibliografico(Name, isbn, Autor, leaned)
+Revista::Revista(std::string Name, int isbn, std::string Autor, int lendedId, int numeroEdicion, int mesPublicacion)
+    : MaterialBibliografico(Name, isbn, Autor, lendedId)
     , numeroEdicion{numeroEdicion} 
     , mesPublicacion{mesPublicacion}{
 	}
@@ -9,3 +9,4 @@ Revista::Revista(std::string Name, int isbn, std::string Autor, bool leaned, int
 std::string Revista::ShowInfo() {
     return "ola soi una rebista ";
 }
+

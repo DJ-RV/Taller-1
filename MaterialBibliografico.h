@@ -2,15 +2,18 @@
 #include <iostream>
 
 class MaterialBibliografico {
-private:
+protected:
     std::string Name;
     int isbn;
     std::string Autor;
-    bool lended;
+    int lendedId;
 public:
-    MaterialBibliografico(std::string Name, int isbn, std::string Autor, bool leaned);
+    MaterialBibliografico(std::string Name, int isbn, std::string Autor, int lendedId);
     void ChangeStatus();
     virtual std::string ShowInfo();
+
+    int GetLendedId() {return lendedId;}
+    void SetLendedId(int nlendedId);
 };
 
 

@@ -1,15 +1,13 @@
 #include "MaterialBibliografico.h"
 
 MaterialBibliografico::MaterialBibliografico
-    (std::string Name, int isbn, std::string Autor, bool lended)
+    (std::string Name, int isbn, std::string Autor, int lendedId)
 		: Name{Name}
         , isbn{isbn}
 		, Autor{Autor}
-		, lended{lended} {
+		, lendedId{lendedId} {
 	}
 
-void MaterialBibliografico::ChangeStatus()
-	{
-  		if (lended == 1) { lended = 0; }
-        else if (lended == 0) { lended = 1; }
-	}
+void MaterialBibliografico::SetLendedId(int nlendedId) {
+    lendedId = nlendedId;
+}
