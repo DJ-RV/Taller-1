@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Headers/Libro.h"
 
 Libro::Libro(std::string nombre, int isbn, std::string autor, bool prestado, std::string fechaPubli, std::string resumen)
@@ -7,7 +8,11 @@ Libro::Libro(std::string nombre, int isbn, std::string autor, bool prestado, std
         this -> resumen = resumen;
     }
 
-void Libro::mostrarInformacion()
+void Libro::mostrarInformacion() const
 {
     std::cout << "datos" << std::endl;
+}
+
+Libro::~Libro() {
+    std::cout << "Libro eliminado" << std::endl;
 }

@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Headers/Revista.h"
 
 Revista::Revista(std::string nombre, int isbn, std::string autor, bool prestado, int numeroEdicion, int mesPubli)
@@ -7,7 +8,11 @@ Revista::Revista(std::string nombre, int isbn, std::string autor, bool prestado,
         this -> mesPubli = mesPubli;
     }
 
-void Revista::mostrarInformacion()
+void Revista::mostrarInformacion() const
 {
     std::cout << "datos" << std::endl;
+}
+
+Revista::~Revista() {
+    std::cout << "Revista eliminada" << std::endl;
 }

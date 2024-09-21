@@ -1,7 +1,7 @@
 #pragma once
 #ifndef REVISTA_H
 #define REVISTA_H
-#include "MaterialBibliografico.h"
+#include "MatBiblio.h"
 
 class Revista : public MatBiblio
 {
@@ -10,6 +10,7 @@ class Revista : public MatBiblio
     int mesPubli;
     public:
     Revista(std::string nombre, int isbn, std::string autor, bool prestado, int numeroEdicion, int mesPubli);
-    void mostrarInformacion() override;
+    void mostrarInformacion() const override;
+    ~Revista() override;
 };
 #endif

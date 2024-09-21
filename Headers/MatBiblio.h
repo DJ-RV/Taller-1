@@ -1,10 +1,10 @@
 #pragma once
-#ifndef MATERIALBIBLIOGRAFICO_H
-#define MATERIALBIBLIOGRAFICO_H
+#ifndef MATBIBLIO_H
+#define MATBIBLIO_H
 #include <string>
-#include <iostream>
 
-class MatBiblio {
+class MatBiblio 
+{
     protected:
         std::string nombre;
         int isbn;
@@ -12,11 +12,13 @@ class MatBiblio {
         bool prestado;
     public:
         MatBiblio(std::string nombre, int isbn, std::string autor, bool prestado);
-        virtual void mostrarInformacion();
-
-
+        virtual void mostrarInformacion() const = 0;
         std::string getNombre();
+        int getIsbn();
         std::string getAutor();
+        bool getPrestado();
+        void setPrestado(bool prestado);
+        virtual ~MatBiblio() = 0;
 };
 
 #endif
