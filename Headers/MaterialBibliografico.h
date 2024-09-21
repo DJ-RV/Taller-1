@@ -5,7 +5,7 @@
 #include <iostream>
 
 class MatBiblio {
-    private:
+    protected:
         std::string nombre;
         int isbn;
         std::string autor;
