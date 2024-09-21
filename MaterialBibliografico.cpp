@@ -1,4 +1,4 @@
-#include "MaterialBibliografico.h"
+#include "Headers/MaterialBibliografico.h"
 
 MatBiblio::MatBiblio(std::string nombre, int isbn, std::string autor, bool prestado) 
 {
