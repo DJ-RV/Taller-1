@@ -1,4 +1,7 @@
 #pragma once
+#ifndef MATERIALBIBLIOGRAFICO_H
+#define MATERIALBIBLIOGRAFICO_H
+#include <string>
 #include <iostream>
 
 class MatBiblio {
@@ -15,3 +18,5 @@ class MatBiblio {
         std::string getNombre();
         std::string getAutor();
 };
+
+#endif
