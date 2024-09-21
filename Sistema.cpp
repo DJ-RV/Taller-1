@@ -9,5 +9,5 @@ Sistema& Sistema::getInstance() {
 }
 
 std::string Sistema::testPalRV() {
-    return "habemos un sistema funcional";
+    return "habemos un sistema funcional pendejo";
 }
