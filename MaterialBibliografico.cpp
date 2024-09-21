@@ -9,6 +9,6 @@ MaterialBibliografico::MaterialBibliografico
 		, lendedId{lendedId} {
 	}
 
-void MaterialBibliografico::SetLendedId(int nlendedId) {
+void MaterialBibliografico::setLendedId(int nlendedId) {
     lendedId = nlendedId;
 }

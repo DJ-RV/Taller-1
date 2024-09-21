@@ -52,8 +52,65 @@ void write() {
 
 }
 
-void agregarMaterial() {
+void agregarMaterial(int espacio) {
+    if (espacio < 100) {
+        int opcion;
+        MaterialBibliografico* octavio;
+        cout << "Elige tipo de material" << endl;
+        cout << "1) Libro" << endl;
+        cout << "2) Revista" << endl;
+        cin >> opcion;
+        switch(opcion) {
+        case 1:
+            string name;
+            int isbn;
+            string autor;
+            int lendedId;
+            string fechaPublicacion;
+            string resumen;
+            cout << "Indique nombre del libro" << endl;
+            cin >> name;
+            cout << "Indique ISBN" << endl;
+            cin >> isbn;
+            cout << "Indique autor del libro" << endl;
+            cin >> autor;
+            cout << "Indique ID del libro" << endl;
+            cin >> lendedId;
+            cout << "Indique fecha de publicacion" << endl;
+            cin >> fechaPublicacion;
+            cout << "Indique resumen" << endl;
+            cin >> resumen;
 
+            octavio = new Libro(name, isbn, autor, lendedId, fechaPublicacion, resumen);
+            cout << "Libro agregado exitosamente" << endl;
+        case 2:
+            string name;
+            int isbn;
+            string autor;
+            int lendedId;
+            int numeroEdicion;
+            int mesPublicacion;
+            cout << "Indique nombre de la revista" << endl;
+            cin >> name;
+            cout << "Indique ISBN" << endl;
+            cin >> isbn;
+            cout << "Indique autor de la revista" << endl;
+            cin >> autor;
+            cout << "Indique ID de la revista" << endl;
+            cin >> lendedId;
+            cout << "Indique numero de edicion" << endl;
+            cin >> fechaPublicacion;
+            cout << "Indique mes de publicacion" << endl;
+            cin >> resumen;
+
+            octavio = new Revista(name, isbn, autor, lendedId, numeroEdicion, mesPublicacion);
+            cout << "Revista agregada exitosamente" << endl;
+        default:
+            cout << "Opcion invalida, por favor reingrese" << endl;
+        }   
+    } else {
+        cout << "No se puede añadir material debido a la falta de espacio" << endl;
+    }
 }
 
 void mostrarInfo() {
@@ -113,7 +170,6 @@ void menu() {
 }
 
 int main() {
-
     MaterialBibliografico* biblioteca[100];
     leerArchivo(biblioteca);
     menu();

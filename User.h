@@ -8,7 +8,7 @@ class User {
 private:
     std::string nombre;
     int id;
-    MaterialBibliografico* materialPrestado[5];
+    MaterialBibliografico* materialesPrestados[5];
 public:
     User(std::string nombre, int id);
     void prestarMaterial();

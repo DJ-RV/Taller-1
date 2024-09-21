@@ -13,9 +13,8 @@ public:
     MaterialBibliografico(std::string Name, int isbn, std::string Autor, int lendedId);
     void ChangeStatus();
     virtual std::string ShowInfo();
-
-    int GetLendedId() {return lendedId;}
-    void SetLendedId(int nlendedId);
+    int getLendedId() {return lendedId;}
+    void setLendedId(int nlendedId);
 };
 
 #endif

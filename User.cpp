@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-User::user(std::string nombre, int id)
+User::User(std::string nombre, int id)
     : nombre{nombre}
     , id{id} {
     }
@@ -10,9 +10,9 @@ User::user(std::string nombre, int id)
 void User::prestarMaterial(MaterialBibliografico* material) {
     int i = 0;
     while(i < 5) {
-        if (materialesPrestados[i] == nullptr) {
+        if (this -> materialesPrestados[i] == nullptr) {
             this -> materialesPrestados[i] = material;
-            material -> lendedId = this -> id;
+            material -> setLendedId(this -> id);
             return;
         }
         i++;
@@ -22,9 +22,9 @@ void User::prestarMaterial(MaterialBibliografico* material) {
 void User::devolverMaterial(MaterialBibliografico* material) {
     int i = 4;
     while (i > -1) {
-        if (materialesPrestados[i] == material) {
+        if (this -> materialesPrestados[i] == material) {
             this -> materialesPrestados[i] = nullptr;
-            material -> lendedId = null;
+            material -> setLendedId(-1);
             return;
         }
         i--;
@@ -33,10 +33,11 @@ void User::devolverMaterial(MaterialBibliografico* material) {
 
 void User::mostrarMaterialesPrestados() {
     for (int i = 0; i < 5; i++) {
-        std::cout << this -> materialesPrestados[i] << "\n";
+        if (this->materialesPrestados[i] != nullptr) {
+            std::cout << this -> materialesPrestados[i] -> ShowInfo() << "\n";
+        }
     }
-    std::cout << std:endl;
-    return;
+    std::cout << std::endl;
 }
 
 void User::setId(int id) {
