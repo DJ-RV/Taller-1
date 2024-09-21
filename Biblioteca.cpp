@@ -1,7 +1,6 @@
-#include <vector>
-#include "MaterialBibliografico.cpp"
-#include "Libro.cpp"
-#include "Revista.cpp"
+#include "Headers/MaterialBibliografico.h"
+#include "Headers/Libro.h"
+#include "Headers/Revista.h"
 
 
 
