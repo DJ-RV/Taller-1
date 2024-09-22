@@ -12,6 +12,8 @@ class Sistema
 {
     private:
     MatBiblio* biblioteca[100];
+    std::vector<User> usuarios;
+    int espacio = 0;
     // Patrón de diseño Singleton
     Sistema(); // Constructor privado
     Sistema(const Sistema&) = delete;            // Prohíbe la copia
@@ -19,7 +21,7 @@ class Sistema
 
     public:
     static Sistema& getInstance();
-    std::string testPalRV();
+    bool cargarMaterial(std::vector<std::string> datos);
 };
 
 #endif

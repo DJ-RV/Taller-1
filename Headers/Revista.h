@@ -9,7 +9,7 @@ class Revista : public MatBiblio
     int numeroEdicion;
     int mesPubli;
     public:
-    Revista(std::string nombre, int isbn, std::string autor, bool prestado, int numeroEdicion, int mesPubli);
+    Revista(std::string nombre, int isbn, std::string autor, int numeroEdicion, int mesPubli);
     void mostrarInformacion() const override;
     ~Revista() override;
 };
