@@ -3,22 +3,25 @@
 #include <vector>
 #include <sstream>
 #include <fstream>
-#include "Headers/Sistema.h"
+#include "Sistema.h"
 
 using namespace std;
 
+
 vector<string> split(const string& ding, char separador);
-void leerArchivo(Sistema& sistema);
-void menu(Sistema& sistema);
-void agregarMaterial(Sistema& sistema);
-void mostrarInfo(Sistema& sistema);
-void buscarMaterial(Sistema& sistema);
-void devolverMaterial(Sistema& sistema);
+void leerArchivo(Sistema* sistema); //done
+void menu(Sistema* sistema); //
+void agregarMaterial(Sistema* sistema); //done
+void mostrarInfo(Sistema* sistema); //done
+void buscarMaterial(Sistema* sistema);
+void prestarMaterial(Sistema* sistema);
+void devolverMaterial(Sistema* sistema);
+void gestionUsuarios(Sistema* sistema);
 
 
 int main() {
-    Sistema& sistema = Sistema::getInstance();
-    // leerArchivo(sistema);
+    Sistema* sistema = Sistema::getInstance();
+    leerArchivo(sistema);
     menu(sistema);
     return 0;
 }
@@ -35,7 +38,7 @@ vector<string> split(const string& ding, char separador) {
     return resultado;
 }
 
-void leerArchivo(Sistema& sistema) {
+void leerArchivo(Sistema* sistema) {
     ifstream arch("BibliotecaGuardada.txt");
 
     if (!arch.is_open()) {
@@ -48,7 +51,7 @@ void leerArchivo(Sistema& sistema) {
 
     while (getline(arch, linea) && espacio < 100) {
         vector<string> datos = split(linea, ';');
-        bool carga = sistema.cargarMaterial(datos);
+        bool carga = sistema->cargarMaterial(datos);
         if (carga == false) {
             cout << "No se pueden cargar más datos" << endl;
         }
@@ -57,7 +60,7 @@ void leerArchivo(Sistema& sistema) {
     arch.close();
 }
 
-void menu(Sistema& sistema) {
+void menu(Sistema* sistema) {
     int opcion;
     do {
         cout << "=====================" << endl;
@@ -77,7 +80,7 @@ void menu(Sistema& sistema) {
                 agregarMaterial(sistema);
                 break;
             case 2:
-                cout << "2" << endl;
+                sistema->mostrarBiblioteca();
                 break;
             case 3:
                 cout << "3" << endl;
@@ -89,6 +92,8 @@ void menu(Sistema& sistema) {
                 cout << "5" << endl;
                 break;
             case 6:
+            
+                sistema->deleteBiblioteca();
                 cout << "Saliendo" << endl;
                 break;
             default:
@@ -97,7 +102,7 @@ void menu(Sistema& sistema) {
     } while (opcion != 6);
 }
 
-void agregarMaterial(Sistema& sistema) {
+void agregarMaterial(Sistema* sistema) {
     string linea;
     vector<string> datos;
     int opcion;
@@ -114,7 +119,7 @@ void agregarMaterial(Sistema& sistema) {
                 cin >> linea;
                 datos = split(linea, ',');
                 datos.push_back("libro");
-                carga = sistema.cargarMaterial(datos);
+                carga = sistema->cargarMaterial(datos);
                 if (carga) {
                     cout << "Material añadido exitosamente" << endl;
                 } else {
@@ -126,7 +131,7 @@ void agregarMaterial(Sistema& sistema) {
                 cin >> linea;
                 datos = split(linea, ',');
                 datos.push_back("revista");
-                carga = sistema.cargarMaterial(datos);
+                carga = sistema->cargarMaterial(datos);
                 if (carga) {
                     cout << "Material añadido exitosamente" << endl;
                 } else {
@@ -139,12 +144,12 @@ void agregarMaterial(Sistema& sistema) {
     } while (opcion > 2 || opcion < 1);
 }
 
-void mostrarInfo(Sistema& sistema) {
+void mostrarInfo(Sistema* sistema) {
 
 }
-void buscarMaterial(Sistema& sistema) {
+void buscarMaterial(Sistema* sistema) {
 
 }
-void devolverMaterial(Sistema& sistema) {
+void devolverMaterial(Sistema* sistema) {
 
 }

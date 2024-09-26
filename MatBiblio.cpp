@@ -1,5 +1,5 @@
 #include <string>
-#include "Headers/MatBiblio.h"
+#include "MatBiblio.h"
 
 MatBiblio::MatBiblio(std::string nombre, int isbn, std::string autor) {
     this -> nombre = nombre;

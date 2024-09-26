@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Headers/Revista.h"
+#include "Revista.h"
 
 Revista::Revista(std::string nombre, int isbn, std::string autor, int numeroEdicion, int mesPubli)
     : MatBiblio(nombre, isbn, autor)
@@ -10,7 +10,7 @@ Revista::Revista(std::string nombre, int isbn, std::string autor, int numeroEdic
 
 void Revista::mostrarInformacion() const
 {
-    std::cout << "datos" << std::endl;
+    std::cout << "datos de revista: " << nombre <<std::endl;
 }
 
 Revista::~Revista() {

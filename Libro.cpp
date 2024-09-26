@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Headers/Libro.h"
+#include "Libro.h"
 
 Libro::Libro(std::string nombre, int isbn, std::string autor, std::string fechaPubli, std::string resumen)
     : MatBiblio(nombre, isbn, autor)
@@ -10,7 +10,7 @@ Libro::Libro(std::string nombre, int isbn, std::string autor, std::string fechaP
 
 void Libro::mostrarInformacion() const
 {
-    std::cout << "datos" << std::endl;
+    std::cout << "datos de libro: " << nombre << std::endl;
 }
 
 Libro::~Libro() {

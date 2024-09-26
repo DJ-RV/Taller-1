@@ -1,4 +1,4 @@
-#include "Headers/User.h"
+#include "User.h"
 
 User::User(std::string nombre, int id) {
     this -> nombre = nombre;
