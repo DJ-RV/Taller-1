@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Revista.h"
 
-Revista::Revista(std::string nombre, int isbn, std::string autor, std::string numeroEdicion, std::string mesPubli)
+Revista::Revista(std::string nombre, std::string isbn, std::string autor, std::string numeroEdicion, std::string mesPubli)
     : MatBiblio(nombre, isbn, autor)
     {
         this -> numeroEdicion = numeroEdicion;

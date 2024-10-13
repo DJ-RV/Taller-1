@@ -11,6 +11,7 @@ using namespace std;
 
 vector<string> split(const string& ding, char separador);
 void leerArchivo(Sistema* sistema); //done
+void leerArchivoUsuarios(Sistema* sistema);
 void menu(Sistema* sistema); //
 void agregarMaterial(Sistema* sistema); //done
 void mostrarInfo(Sistema* sistema); //done
@@ -19,10 +20,13 @@ void prestarMaterial(Sistema* sistema);
 void devolverMaterial(Sistema* sistema);
 void gestionUsuarios(Sistema* sistema);
 
+void mostrarMaterialesUsuario(Sistema* sistema);
+
 
 int main() {
     Sistema* sistema = Sistema::getInstance();
     leerArchivo(sistema);
+    leerArchivoUsuarios(sistema);
     menu(sistema);
     return 0;
 }
@@ -61,6 +65,22 @@ void leerArchivo(Sistema* sistema) {
     arch.close();
 }
 
+void leerArchivoUsuarios(Sistema* sistema) {
+    ifstream uArch("UsuariosGuardados.txt");
+
+    if (!uArch.is_open()) {
+        cout << "Archivo no encontrado" << endl;
+        return;
+    }
+
+    string linea;
+
+    while(getline(uArch, linea)) {
+        vector<string> datos = split(linea, ';');
+        sistema ->cargarUsuarios(datos);
+    }
+}
+
 void menu(Sistema* sistema) {
     int opcion;
     do {
@@ -88,7 +108,7 @@ void menu(Sistema* sistema) {
                 buscarMaterial(sistema);
                 break;
             case 4:
-                cout << "4" << endl;
+                prestarMaterial(sistema);
                 break;
             case 5:
                 cout << "5" << endl;
@@ -97,6 +117,9 @@ void menu(Sistema* sistema) {
                 sistema->guardarDatos();
                 sistema->deleteBiblioteca();
                 cout << "Saliendo" << endl;
+                break;
+            case 7:
+                mostrarMaterialesUsuario(sistema);
                 break;
             default:
                 cout << "Opcion invalida, por favor reingrese" << endl;
@@ -188,6 +211,25 @@ void buscarMaterial(Sistema* sistema) {
         }
     } 
 }
+
+void prestarMaterial(Sistema* sistema) {
+    string argumento;
+    string nombreUsuario;
+    cout << "indique el nombre del material a prestar" << endl;
+    cin.ignore(INT_MAX, '\n');
+    getline(cin, argumento);
+    cout << "indique el nombre de a quien se le prestara el material" << endl; //añadir control de error
+    getline(cin, nombreUsuario);
+    sistema->prestarMaterial(argumento, nombreUsuario);
+}
+void mostrarMaterialesUsuario(Sistema* sistema) {
+    string argumento;
+    cout << "indique el nombre del usuario" << endl;
+    cin.ignore(INT_MAX, '\n');
+    getline(cin, argumento);
+    sistema->mostrarMaterialUsuarios(argumento);
+}
+
 void devolverMaterial(Sistema* sistema) {
 
 }

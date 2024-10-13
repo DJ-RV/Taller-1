@@ -7,15 +7,15 @@ class MatBiblio
 {
     protected:
         std::string nombre;
-        int isbn;
+        std::string isbn;
         std::string autor;
         bool prestado;
     public:
-        MatBiblio(std::string nombre, int isbn, std::string autor);
+        MatBiblio(std::string nombre, std::string isbn, std::string autor);
         virtual void mostrarInformacion() const = 0;
         virtual std::string extraData() const = 0;
         std::string getNombre();
-        int getIsbn();
+        std::string getIsbn();
         std::string getAutor();
         bool isPrestado();
         void setPrestado(bool prestado);

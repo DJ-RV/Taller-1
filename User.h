@@ -16,9 +16,11 @@ class User
     void prestarMaterial(MatBiblio* material);
     void devolverMaterial(MatBiblio* material);
     void mostrarMaterialesPrestados();
+    std::string mostrarIsbn();
     int getId() {return id;}
     std::string getNombre() {return nombre;}
     void setId(int id);
     void setNombre(std::string nombre);
+    ~User();
 };
 #endif

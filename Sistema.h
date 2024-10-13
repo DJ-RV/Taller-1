@@ -12,7 +12,7 @@ class Sistema
 {
     private:
     MatBiblio* biblioteca[100];
-    std::vector<User> usuarios;
+    std::vector<User*> usuarios;
     static Sistema* instancia;
     int espacio = 0;
     // Patrón de diseño Singleton
@@ -21,9 +21,14 @@ class Sistema
     public:
     static Sistema* getInstance();
     bool cargarMaterial(std::vector<std::string> datos);
+    void cargarUsuarios(std::vector<std::string> datos);
+    void prestarMaterial(std::string argumento, std::string nombreUsuario);
     void mostrarBiblioteca();
     void guardarDatos();
     void deleteBiblioteca();
+    void mostrarMaterialUsuarios(std::string argumento);
+    User* buscarUsuario(std::string argumento);
+    MatBiblio* buscarMatBiblioObj(std::string argumento);
     void buscarMatBiblio(std::string argumento, int tipo);
 };
 

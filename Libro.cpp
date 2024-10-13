@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Libro.h"
 
-Libro::Libro(std::string nombre, int isbn, std::string autor, std::string fechaPubli, std::string resumen)
+Libro::Libro(std::string nombre, std::string isbn, std::string autor, std::string fechaPubli, std::string resumen)
     : MatBiblio(nombre, isbn, autor)
     {
         this -> fechaPubli = fechaPubli;
