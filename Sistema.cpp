@@ -59,8 +59,13 @@ void Sistema::cargarUsuarios(std::vector<std::string> datos) {
 void Sistema::prestarMaterial(std::string argumento, std::string nombreUsuario) {
     User* usuario = buscarUsuario(nombreUsuario);
     MatBiblio* material = buscarMatBiblioObj(argumento);
-    usuario->prestarMaterial(material);
+    if (usuario != nullptr && material != nullptr) {
+        usuario->prestarMaterial(material);
+    } else {
+        std::cout << "usuario o material no encontrados" << std::endl;
+    }
 }
+    
 
 void Sistema::mostrarMaterialUsuarios(std::string argumento){
     User* usuario = buscarUsuario(argumento);

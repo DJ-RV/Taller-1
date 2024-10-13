@@ -218,13 +218,14 @@ void gestionUsuarios(Sistema* sistema) {
 
 }
 
+
 void prestarMaterial(Sistema* sistema) {
     string argumento;
     string nombreUsuario;
     cout << "indique el nombre del material a prestar" << endl;
     cin.ignore(INT_MAX, '\n');
     getline(cin, argumento);
-    cout << "indique el nombre de a quien se le prestara el material" << endl; //añadir control de error
+    cout << "indique el nombre de a quien se le prestara el material" << endl;
     getline(cin, nombreUsuario);
     sistema->prestarMaterial(argumento, nombreUsuario);
 }
