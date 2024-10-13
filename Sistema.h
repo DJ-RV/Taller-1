@@ -22,7 +22,9 @@ class Sistema
     static Sistema* getInstance();
     bool cargarMaterial(std::vector<std::string> datos);
     void mostrarBiblioteca();
+    void guardarDatos();
     void deleteBiblioteca();
+    void buscarMatBiblio(std::string argumento, int tipo);
 };
 
 #endif

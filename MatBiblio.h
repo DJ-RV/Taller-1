@@ -13,6 +13,7 @@ class MatBiblio
     public:
         MatBiblio(std::string nombre, int isbn, std::string autor);
         virtual void mostrarInformacion() const = 0;
+        virtual std::string extraData() const = 0;
         std::string getNombre();
         int getIsbn();
         std::string getAutor();

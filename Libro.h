@@ -11,6 +11,7 @@ class Libro : public MatBiblio
     public:
     Libro(std::string nombre, int isbn, std::string autor, std::string fechaPubli, std::string resumen);
     void mostrarInformacion() const override;
+    std::string extraData() const override;
     ~Libro() override;
 };
 #endif

@@ -4,6 +4,7 @@
 #include <sstream>
 #include <fstream>
 #include "Sistema.h"
+#include <climits>
 
 using namespace std;
 
@@ -63,6 +64,7 @@ void leerArchivo(Sistema* sistema) {
 void menu(Sistema* sistema) {
     int opcion;
     do {
+
         cout << "=====================" << endl;
         cout << "      BIBLIOTECA     " << endl;
         cout << "=====================" << endl;
@@ -74,16 +76,16 @@ void menu(Sistema* sistema) {
         cout << "6) Salir" << endl;
 
         cin >> opcion;
-
+ 
         switch(opcion) {
             case 1:
                 agregarMaterial(sistema);
                 break;
             case 2:
-                sistema->mostrarBiblioteca();
+                mostrarInfo(sistema);
                 break;
             case 3:
-                cout << "3" << endl;
+                buscarMaterial(sistema);
                 break;
             case 4:
                 cout << "4" << endl;
@@ -92,33 +94,41 @@ void menu(Sistema* sistema) {
                 cout << "5" << endl;
                 break;
             case 6:
-            
+                sistema->guardarDatos();
                 sistema->deleteBiblioteca();
                 cout << "Saliendo" << endl;
                 break;
             default:
                 cout << "Opcion invalida, por favor reingrese" << endl;
+                break;
         }
+
     } while (opcion != 6);
 }
+
 
 void agregarMaterial(Sistema* sistema) {
     string linea;
     vector<string> datos;
-    int opcion;
+    int opcion = 0;
     bool carga;
     do {
         cout << "Qué tipo de material desea agregar a la biblioteca?" << endl;
         cout << "1) Libro" << endl;
         cout << "2) Revista" << endl;
+
+        cin.clear();
         cin >> opcion;
+        cin.ignore(INT_MAX, '\n');
 
         switch(opcion) {
             case 1:
-                cout << "Ingrese las especificaciones del material según el siguiente formato: 'Nombre,ISBN,Autor,FechaPublicacion,Resumen'" << endl;
-                cin >> linea;
-                datos = split(linea, ',');
+                cout << "Ingrese las especificaciones del material según el siguiente formato: 'Nombre;ISBN;Autor;FechaPublicacion;Resumen'" << endl;
+                cout << "Ingrese la fecha en formato: 00-00-0000" << endl;
+                getline(cin, linea);
+                datos = split(linea, ';');
                 datos.push_back("libro");
+                datos[6] = datos[5], datos[5] = datos[4], datos[4] = datos[3], datos[3] = "0";
                 carga = sistema->cargarMaterial(datos);
                 if (carga) {
                     cout << "Material añadido exitosamente" << endl;
@@ -127,10 +137,12 @@ void agregarMaterial(Sistema* sistema) {
                 }
                 break;
             case 2:
-                cout << "Ingrese las especificaciones del material según el siguiente formato: 'Nombre,ISBN,Autor,NumeroEdicion,MesPublicacion'" << endl;
-                cin >> linea;
-                datos = split(linea, ',');
+                cout << "Ingrese las especificaciones del material según el siguiente formato: 'Nombre;ISBN;Autor;NumeroEdicion;MesPublicacion'" << endl;
+                getline(cin, linea);
+                datos = split(linea, ';');
                 datos.push_back("revista");
+                datos.push_back("placeholder");
+                datos[6] = datos[5], datos[5] = datos[4], datos[4] = datos[3], datos[3] = "0";
                 carga = sistema->cargarMaterial(datos);
                 if (carga) {
                     cout << "Material añadido exitosamente" << endl;
@@ -145,10 +157,36 @@ void agregarMaterial(Sistema* sistema) {
 }
 
 void mostrarInfo(Sistema* sistema) {
-
+    sistema->mostrarBiblioteca();
 }
-void buscarMaterial(Sistema* sistema) {
 
+void buscarMaterial(Sistema* sistema) {
+    int respuesta = 0;
+    string argumento;
+    while (respuesta > 2 || respuesta < 1 ) {
+        argumento = "";
+        respuesta = 0;
+        cout << "Por que medio desea buscar:\n1) Nombre\n2) Autor" << endl;
+        cin >> respuesta;
+        cin.ignore(INT_MAX, '\n');
+        switch(respuesta)
+        {
+            case 1:
+                cout << "Ingrese el nombre del material" << endl;
+                getline(cin, argumento);
+                sistema->buscarMatBiblio(argumento, respuesta);
+                break;
+            case 2:
+                cout << "Ingrese el autor del material" << endl;
+                getline(cin, argumento);
+                sistema->buscarMatBiblio(argumento, respuesta);
+                break;
+            default:
+                cout << "Opcion invalida, por favor reingrese" << endl;
+                break;
+                
+        }
+    } 
 }
 void devolverMaterial(Sistema* sistema) {
 
