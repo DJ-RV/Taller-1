@@ -9,14 +9,14 @@
 using namespace std;
 
 
-vector<string> split(const string& ding, char separador);
+vector<string> split(const string& ding, char separador); //done
 void leerArchivo(Sistema* sistema); //done
-void leerArchivoUsuarios(Sistema* sistema);
-void menu(Sistema* sistema); //
+void leerArchivoUsuarios(Sistema* sistema); //done
+void menu(Sistema* sistema); //falta administración de usuarios
 void agregarMaterial(Sistema* sistema); //done
 void mostrarInfo(Sistema* sistema); //done
-void buscarMaterial(Sistema* sistema);
-void prestarMaterial(Sistema* sistema);
+void buscarMaterial(Sistema* sistema); //done
+void prestarMaterial(Sistema* sistema); //done
 void devolverMaterial(Sistema* sistema);
 void gestionUsuarios(Sistema* sistema);
 
@@ -93,7 +93,9 @@ void menu(Sistema* sistema) {
         cout << "3) Buscar Material" << endl;
         cout << "4) Prestar Material" << endl;
         cout << "5) Devolver Material" << endl;
-        cout << "6) Salir" << endl;
+        cout << "6) Gestionar Usuarios" << endl;
+
+        cout << "7) Salir" << endl;
 
         cin >> opcion;
  
@@ -114,19 +116,19 @@ void menu(Sistema* sistema) {
                 cout << "5" << endl;
                 break;
             case 6:
+
+                break;
+            case 7:
                 sistema->guardarDatos();
                 sistema->deleteBiblioteca();
                 cout << "Saliendo" << endl;
-                break;
-            case 7:
-                mostrarMaterialesUsuario(sistema);
                 break;
             default:
                 cout << "Opcion invalida, por favor reingrese" << endl;
                 break;
         }
 
-    } while (opcion != 6);
+    } while (opcion != 7);
 }
 
 
