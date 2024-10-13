@@ -20,8 +20,6 @@ void prestarMaterial(Sistema* sistema); //done
 void devolverMaterial(Sistema* sistema);
 void gestionUsuarios(Sistema* sistema);
 
-void mostrarMaterialesUsuario(Sistema* sistema);
-
 
 int main() {
     Sistema* sistema = Sistema::getInstance();
@@ -116,12 +114,14 @@ void menu(Sistema* sistema) {
                 cout << "5" << endl;
                 break;
             case 6:
-
+                gestionUsuarios(sistema);
                 break;
             case 7:
+                cout << "Guardando datos" << endl;
                 sistema->guardarDatos();
+                cout << "Liberando memoria" << endl;
                 sistema->deleteBiblioteca();
-                cout << "Saliendo" << endl;
+                cout << "Cierre exitoso" << endl;
                 break;
             default:
                 cout << "Opcion invalida, por favor reingrese" << endl;
@@ -214,6 +214,10 @@ void buscarMaterial(Sistema* sistema) {
     } 
 }
 
+void gestionUsuarios(Sistema* sistema) {
+
+}
+
 void prestarMaterial(Sistema* sistema) {
     string argumento;
     string nombreUsuario;
@@ -223,13 +227,6 @@ void prestarMaterial(Sistema* sistema) {
     cout << "indique el nombre de a quien se le prestara el material" << endl; //añadir control de error
     getline(cin, nombreUsuario);
     sistema->prestarMaterial(argumento, nombreUsuario);
-}
-void mostrarMaterialesUsuario(Sistema* sistema) {
-    string argumento;
-    cout << "indique el nombre del usuario" << endl;
-    cin.ignore(INT_MAX, '\n');
-    getline(cin, argumento);
-    sistema->mostrarMaterialUsuarios(argumento);
 }
 
 void devolverMaterial(Sistema* sistema) {

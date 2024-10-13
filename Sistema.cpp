@@ -92,6 +92,9 @@ void Sistema::guardarDatos() {
 }
 
 void Sistema::deleteBiblioteca() {
+    for (int i = 0; i < usuarios.size(); i++) {
+        delete usuarios[i];
+    }
     for (int i = 0; i < espacio; i++) {
         delete biblioteca[i];
     }
