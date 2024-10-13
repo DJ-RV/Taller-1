@@ -61,8 +61,10 @@ void Sistema::prestarMaterial(std::string argumento, std::string nombreUsuario) 
     MatBiblio* material = buscarMatBiblioObj(argumento);
     if (usuario != nullptr && material != nullptr) {
         usuario->prestarMaterial(material);
+    } else if (usuario == nullptr) {
+        std::cout << "Usuario no encontrado" << std::endl;
     } else {
-        std::cout << "usuario o material no encontrados" << std::endl;
+        std::cout << "Material no encontrado" << std::endl;
     }
 }
     
@@ -145,9 +147,19 @@ void Sistema::buscarMatBiblio(std::string argumento, int tipo){
         }
         break;
     default:
-        std::cout << "no se pudo encontrar material" << std::endl;
+        std::cout << "No se pudo encontrar material" << std::endl;
         break;
     }
+}
 
-
+void Sistema::devolverMaterial(std::string argumento, std::string nombreUsuario) {
+    User* usuario = buscarUsuario(nombreUsuario);
+    MatBiblio* material = buscarMatBiblioObj(argumento);
+    if (usuario != nullptr && material != nullptr) {
+        usuario->devolverMaterial(material);
+    } else if (usuario == nullptr) {
+        std::cout << "Usuario no encontrado" << std::endl;
+    } else {
+        std::cout << "Material no encontrado" << std::endl;
+    }
 }

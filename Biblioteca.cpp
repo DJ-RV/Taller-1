@@ -231,5 +231,12 @@ void prestarMaterial(Sistema* sistema) {
 }
 
 void devolverMaterial(Sistema* sistema) {
-
+    string argumento;
+    string nombreUsuario;
+    cout << "Indique el nombre del usuario que devolverá material" << endl;
+    getline(cin, nombreUsuario);
+    cout << "indique el nombre o ISBN del material a devolver" << endl;
+    cin.ignore(INT_MAX, '\n');
+    getline(cin, argumento);
+    sistema->devolverMaterial(argumento, nombreUsuario);
 }
