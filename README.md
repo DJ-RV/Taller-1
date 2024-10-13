@@ -2,6 +2,16 @@
 
 Taller N°1 de Estructura de Datos.
 
+# Compilación y Ejecución 
+
+Para compilar, linkear y ejecutar el código, utilizar estas lineas de comando en orden:
+
+g++ Biblioteca.cpp MatBiblio.cpp Sistema.cpp User.cpp Libro.cpp Revista.cpp -c
+
+g++ Biblioteca.cpp MatBiblio.cpp Sistema.cpp User.cpp Libro.cpp Revista.cpp -o biblio.exe
+
+./biblio.exe
+
 # Objetos
 
 El objeto Sistema es el objeto encargado del manejo de tanto los materiales como los usuarios, almacenandolos y tambien operando con los mismos, ya sea para buscar un material o usuario especifico, como para añadirlos o eliminarlos.
@@ -26,8 +36,12 @@ Los materiales se guardan como "n" si no hay ningun material asignado, "n" refir
 
 # Integrantes
 
+
 Andres Giovanni Hidalgo Ramallo - Rut: - Paralelo: 
+
 Diego Javier Ravanal Vanzi - Rut: 22.228.327-2 - Paralelo: C2
+
+
 
 (para compilar, linkear y ejecutar el código, utilizar estas lineas de comando en orden)
 g++ Biblioteca.cpp MatBiblio.cpp Sistema.cpp User.cpp Libro.cpp Revista.cpp -c
