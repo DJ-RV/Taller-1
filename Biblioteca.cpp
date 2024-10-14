@@ -12,7 +12,7 @@ using namespace std;
 vector<string> split(const string& ding, char separador); //done
 void leerArchivo(Sistema* sistema); //done
 void leerArchivoUsuarios(Sistema* sistema); //done
-void menu(Sistema* sistema); //falta administración de usuarios
+void menu(Sistema* sistema); //done
 void agregarMaterial(Sistema* sistema); //done
 void mostrarInfo(Sistema* sistema); //done
 void buscarMaterial(Sistema* sistema); //done
@@ -20,8 +20,8 @@ void prestarMaterial(Sistema* sistema); //done
 void devolverMaterial(Sistema* sistema); // done
 void gestionUsuarios(Sistema* sistema); // in process
 void crearUsuario(Sistema* sistema); // done
-void buscarUsuario(Sistema* sistema);
-void eliminarUsuario(Sistema* sistema);
+void buscarUsuario(Sistema* sistema); // done
+void eliminarUsuario(Sistema* sistema); // done
 
 
 int main() {
