@@ -32,13 +32,15 @@ void User::devolverMaterial(MatBiblio* material) {
 }
 
 void User::mostrarMaterialesPrestados() {
-    std::endl;
+    std::cout << "\n";
     std::cout << "Materiales en posesion de " << nombre << std::endl;
     for (int i = 0; i < 5; i++) {
         if (this -> materialesPrestados[i] != nullptr) {
             this -> materialesPrestados[i] -> mostrarInformacion();
+
+            std::cout << "\n";
         }
-        std::endl;
+        
     }
 
 }
