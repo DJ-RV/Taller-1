@@ -83,6 +83,9 @@ void Sistema::guardarDatos() {
     for (int i = 0; i < usuarios.size(); i++) {
         txtUser << usuarios[i]->getNombre() << ";" << usuarios[i]->getId() << ";";
         txtUser << usuarios[i]->mostrarIsbn();
+        if (i != usuarios.size() - 1){
+            txtUser << "\n";
+        }
     }
     txtUser.close();
 

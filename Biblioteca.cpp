@@ -155,6 +155,7 @@ void agregarMaterial(Sistema* sistema) {
                 getline(cin, linea);
                 datos = split(linea, ';');
                 datos.push_back("libro");
+                datos.push_back("placeholder");
                 datos[6] = datos[5], datos[5] = datos[4], datos[4] = datos[3], datos[3] = "0";
                 carga = sistema->cargarMaterial(datos);
                 if (carga) {
