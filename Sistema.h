@@ -30,7 +30,7 @@ class Sistema
     User* buscarUsuario(std::string argumento);
     MatBiblio* buscarMatBiblioObj(std::string argumento);
     void buscarMatBiblio(std::string argumento, int tipo);
-    void devolverMaterial(std::string argumento, std::string nombreUsuario)
+    void devolverMaterial(std::string argumento, std::string nombreUsuario);
     void crearUsuario(std::string nombre, int id);
 };
 

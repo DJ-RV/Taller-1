@@ -119,11 +119,11 @@ void menu(Sistema* sistema) {
                 gestionUsuarios(sistema);
                 break;
             case 7:
-                cout << "Guardando datos" << endl;
+                cout << "Guardando datos..." << endl;
                 sistema->guardarDatos();
-                cout << "Liberando memoria" << endl;
+                cout << "Liberando memoria..." << endl;
                 sistema->deleteBiblioteca();
-                cout << "Cierre exitoso" << endl;
+                cout << "Cierre exitoso." << endl;
                 break;
             default:
                 cout << "Opcion invalida, por favor reingrese" << endl;
@@ -241,7 +241,7 @@ void gestionUsuarios(Sistema* sistema) {
                 cout << "Opcion invalida, por favor reingrese" << endl;
                 break;
         }
-    } while (opcion < 0 || opcion > 3)
+    } while (opcion < 0 || opcion > 3);
 }
 
 
@@ -271,15 +271,23 @@ void crearUsuario(Sistema* sistema) {
     string nombre;
     int id;
     cout << "Ingrese nombre del usuario" << endl;
-    getline(cin, nombreUsuario);
+    getline(cin, nombre);
     cout << "Ingrese ID del usuario" << endl;
-    getline(cin, id);
+    cin >> id;
     sistema->crearUsuario(nombre, id);
-    cout << "Usuario Creado Exitosamente" << endl;
 }
 
 void buscarUsuario(Sistema* sistema) {
-
+    string nombre;
+    cout << "Ingrese el nombre del usuario a buscar" << "\n";
+    cin >> nombre;
+    User* user = sistema->buscarUsuario(nombre);
+    if (user == nullptr) {
+        cout << "Usuario no encontrado" << endl;
+    } else {
+        cout << user->getNombre() << " id: " << user->getId() << endl;
+        user->mostrarMaterialesPrestados(); 
+    }
 }
 
 void eliminarUsuario(Sistema* sistema) {

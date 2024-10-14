@@ -165,6 +165,14 @@ void Sistema::devolverMaterial(std::string argumento, std::string nombreUsuario)
 }
 
 void Sistema::crearUsuario(std::string nombre, int id) {
-    User* user = new User(nombre, id);
-    usuarios.push_back(user);
+    int repeat = 0;
+    for (int i = 0; i < usuarios.size(); i++) {
+        if (nombre == usuarios[i]->getNombre()){
+            repeat++;
+        }
+    }
+    if (repeat == 0){
+        User* user = new User(nombre, id);
+        usuarios.push_back(user);
+    } else { std::cout << "Este nombre ya está utilizado, use otro nombre\n";}
 }

@@ -32,11 +32,15 @@ void User::devolverMaterial(MatBiblio* material) {
 }
 
 void User::mostrarMaterialesPrestados() {
+    std::endl;
+    std::cout << "Materiales en posesion de " << nombre << std::endl;
     for (int i = 0; i < 5; i++) {
         if (this -> materialesPrestados[i] != nullptr) {
             this -> materialesPrestados[i] -> mostrarInformacion();
         }
+        std::endl;
     }
+
 }
 
 //devuelve los isbn de los materiales prestados en un formato para guardado en archivo txt
@@ -74,4 +78,5 @@ void User::devolverMaterialesPrestados() {
 }
 
 User::~User() {
+    std::cout << "Usuario eliminado" << std::endl;
 }
