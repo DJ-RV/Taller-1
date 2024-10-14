@@ -291,5 +291,8 @@ void buscarUsuario(Sistema* sistema) {
 }
 
 void eliminarUsuario(Sistema* sistema) {
-
+    string nombre;
+    cout << "Ingrese nombre del usuario a eliminar" << endl;
+    getline(cin, nombre);
+    sistema->eliminarUsuario(nombre);
 }

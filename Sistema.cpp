@@ -176,3 +176,9 @@ void Sistema::crearUsuario(std::string nombre, int id) {
         usuarios.push_back(user);
     } else { std::cout << "Este nombre ya está utilizado, use otro nombre\n";}
 }
+
+void Sistema::eliminarUsuario(std::string nombre) {
+    User* user = buscarUsuario(nombre);
+    user->devolverMaterialesPrestados();
+    delete user;
+}
