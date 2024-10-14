@@ -31,6 +31,7 @@ class Sistema
     MatBiblio* buscarMatBiblioObj(std::string argumento);
     void buscarMatBiblio(std::string argumento, int tipo);
     void devolverMaterial(std::string argumento, std::string nombreUsuario)
+    void crearUsuario(std::string nombre, int id);
 };
 
 #endif

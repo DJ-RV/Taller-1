@@ -21,6 +21,7 @@ class User
     std::string getNombre() {return nombre;}
     void setId(int id);
     void setNombre(std::string nombre);
+    void devolverMaterialesPrestados();
     ~User();
 };
 #endif

@@ -163,3 +163,8 @@ void Sistema::devolverMaterial(std::string argumento, std::string nombreUsuario)
         std::cout << "Material no encontrado" << std::endl;
     }
 }
+
+void Sistema::crearUsuario(std::string nombre, int id) {
+    User* user = new User(nombre, id);
+    usuarios.push_back(user);
+}

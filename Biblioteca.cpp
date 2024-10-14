@@ -17,8 +17,11 @@ void agregarMaterial(Sistema* sistema); //done
 void mostrarInfo(Sistema* sistema); //done
 void buscarMaterial(Sistema* sistema); //done
 void prestarMaterial(Sistema* sistema); //done
-void devolverMaterial(Sistema* sistema);
-void gestionUsuarios(Sistema* sistema);
+void devolverMaterial(Sistema* sistema); // done
+void gestionUsuarios(Sistema* sistema); // in process
+void crearUsuario(Sistema* sistema); // done
+void buscarUsuario(Sistema* sistema);
+void eliminarUsuario(Sistema* sistema);
 
 
 int main() {
@@ -92,7 +95,6 @@ void menu(Sistema* sistema) {
         cout << "4) Prestar Material" << endl;
         cout << "5) Devolver Material" << endl;
         cout << "6) Gestionar Usuarios" << endl;
-
         cout << "7) Salir" << endl;
 
         cin >> opcion;
@@ -111,7 +113,7 @@ void menu(Sistema* sistema) {
                 prestarMaterial(sistema);
                 break;
             case 5:
-                cout << "5" << endl;
+                devolverMaterial(sistema);
                 break;
             case 6:
                 gestionUsuarios(sistema);
@@ -209,13 +211,37 @@ void buscarMaterial(Sistema* sistema) {
             default:
                 cout << "Opcion invalida, por favor reingrese" << endl;
                 break;
-                
         }
     } 
 }
 
 void gestionUsuarios(Sistema* sistema) {
+    int opcion = 0;
+    do {
+        cout << "Qué desea hacer?" << endl;
+        cout << "1) Crear Usuario" << endl;
+        cout << "2) Buscar Usuario" << endl;
+        cout << "3) Eliminar Usuario" << endl;
+        
+        cin.clear();
+        cin >> opcion;
+        cin.ignore(INT_MAX, '\n');
 
+        switch(opcion) {
+            case 1:
+                crearUsuario(sistema);
+                break;
+            case 2:
+                buscarUsuario(sistema);
+                break;
+            case 3:
+                eliminarUsuario(sistema);
+                break;
+            default:
+                cout << "Opcion invalida, por favor reingrese" << endl;
+                break;
+        }
+    } while (opcion < 0 || opcion > 3)
 }
 
 
@@ -239,4 +265,23 @@ void devolverMaterial(Sistema* sistema) {
     cin.ignore(INT_MAX, '\n');
     getline(cin, argumento);
     sistema->devolverMaterial(argumento, nombreUsuario);
+}
+
+void crearUsuario(Sistema* sistema) {
+    string nombre;
+    int id;
+    cout << "Ingrese nombre del usuario" << endl;
+    getline(cin, nombreUsuario);
+    cout << "Ingrese ID del usuario" << endl;
+    getline(cin, id);
+    sistema->crearUsuario(nombre, id);
+    cout << "Usuario Creado Exitosamente" << endl;
+}
+
+void buscarUsuario(Sistema* sistema) {
+
+}
+
+void eliminarUsuario(Sistema* sistema) {
+
 }

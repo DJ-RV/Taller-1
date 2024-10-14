@@ -9,14 +9,14 @@ User::User(std::string nombre, int id) {
 void User::prestarMaterial(MatBiblio* material) {
     int i = 0;
     while(i < 5) {
-        if (this -> materialesPrestados[i] == nullptr && material->isPrestado() != true) {
+        if (this -> materialesPrestados[i] == nullptr) {
             this -> materialesPrestados[i] = material;
             material -> setPrestado(true);
             return;
         }
         i++;
     }
-    std::cout << "no se pudo prestar el material" << std::endl;
+    std::cout << "No se pudo prestar el material" << std::endl;
 }
 
 void User::devolverMaterial(MatBiblio* material) {
@@ -62,6 +62,15 @@ void User::setId(int id) {
 
 void User::setNombre(std::string nombre) {
     this -> nombre = nombre;
+}
+
+void User::devolverMaterialesPrestados() {
+    for(int i = 0; i < 5; i++) {
+        if (this -> materialesPrestados[i] != nullptr) {
+            this -> materialesPrestados[i] -> setPrestado(false);
+            this -> materialesPrestados[i] = nullptr;
+        }
+    }
 }
 
 User::~User() {
