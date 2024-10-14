@@ -8,21 +8,85 @@
 
 using namespace std;
 
+/**
+ * @brief Divide una cadena en subcadenas según un delimitador.
+ * @param ding Cadena de entrada a dividir.
+ * @param separador Carácter delimitador para la división.
+ * @return Vector de subcadenas.
+ */
+vector<string> split(const string& ding, char separador);
 
-vector<string> split(const string& ding, char separador); //done
-void leerArchivo(Sistema* sistema); //done
-void leerArchivoUsuarios(Sistema* sistema); //done
-void menu(Sistema* sistema); //done
-void agregarMaterial(Sistema* sistema); //done
-void mostrarInfo(Sistema* sistema); //done
-void buscarMaterial(Sistema* sistema); //done
-void prestarMaterial(Sistema* sistema); //done
-void devolverMaterial(Sistema* sistema); // done
-void gestionUsuarios(Sistema* sistema); // in process
-void crearUsuario(Sistema* sistema); // done
-void buscarUsuario(Sistema* sistema); // done
-void eliminarUsuario(Sistema* sistema); // done
+/**
+ * @brief Lee los datos del archivo de materiales y los carga en el sistema.
+ * @param sistema Puntero al sistema de biblioteca.
+ */
+void leerArchivo(Sistema* sistema);
 
+/**
+ * @brief Lee los datos del archivo de usuarios y los carga en el sistema.
+ * @param sistema Puntero al sistema de biblioteca.
+ */
+void leerArchivoUsuarios(Sistema* sistema);
+
+/**
+ * @brief Muestra el menú principal y permite navegar entre opciones del sistema.
+ * @param sistema Puntero al sistema de biblioteca.
+ */
+void menu(Sistema* sistema);
+
+/**
+ * @brief Permite agregar materiales (libros o revistas) al sistema.
+ * @param sistema Puntero al sistema de biblioteca.
+ */
+void agregarMaterial(Sistema* sistema);
+
+/**
+ * @brief Muestra la información de todos los materiales registrados.
+ * @param sistema Puntero al sistema de biblioteca.
+ */
+void mostrarInfo(Sistema* sistema);
+
+/**
+ * @brief Permite buscar un material por nombre o autor.
+ * @param sistema Puntero al sistema de biblioteca.
+ */
+void buscarMaterial(Sistema* sistema);
+
+/**
+ * @brief Gestiona el préstamo de un material a un usuario.
+ * @param sistema Puntero al sistema de biblioteca.
+ */
+void prestarMaterial(Sistema* sistema);
+
+/**
+ * @brief Permite registrar la devolución de un material por parte de un usuario.
+ * @param sistema Puntero al sistema de biblioteca.
+ */
+void devolverMaterial(Sistema* sistema);
+
+/**
+ * @brief Muestra un submenú para la gestión de usuarios.
+ * @param sistema Puntero al sistema de biblioteca.
+ */
+void gestionUsuarios(Sistema* sistema);
+
+/**
+ * @brief Crea un nuevo usuario en el sistema.
+ * @param sistema Puntero al sistema de biblioteca.
+ */
+void crearUsuario(Sistema* sistema);
+
+/**
+ * @brief Permite buscar un usuario por su nombre.
+ * @param sistema Puntero al sistema de biblioteca.
+ */
+void buscarUsuario(Sistema* sistema);
+
+/**
+ * @brief Elimina un usuario del sistema.
+ * @param sistema Puntero al sistema de biblioteca.
+ */
+void eliminarUsuario(Sistema* sistema);
 
 int main() {
     Sistema* sistema = Sistema::getInstance();
