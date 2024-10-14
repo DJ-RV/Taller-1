@@ -280,7 +280,7 @@ void crearUsuario(Sistema* sistema) {
 void buscarUsuario(Sistema* sistema) {
     string nombre;
     cout << "Ingrese el nombre del usuario a buscar" << "\n";
-    cin >> nombre;
+    getline(cin, nombre);
     User* user = sistema->buscarUsuario(nombre);
     if (user == nullptr) {
         cout << "Usuario no encontrado" << endl;

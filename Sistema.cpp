@@ -179,6 +179,9 @@ void Sistema::crearUsuario(std::string nombre, int id) {
 
 void Sistema::eliminarUsuario(std::string nombre) {
     User* user = buscarUsuario(nombre);
-    user->devolverMaterialesPrestados();
-    delete user;
+    if (user != nullptr) {
+        user->devolverMaterialesPrestados();
+        delete user;
+    } else { std::cout << "Usuario no encontrado" << std::endl;}
+    
 }
