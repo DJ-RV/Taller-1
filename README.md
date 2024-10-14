@@ -36,7 +36,6 @@ Los materiales se guardan como "n" si no hay ningun material asignado, "n" refir
 
 # Integrantes
 
+Andres Giovanni Hidalgo Ramallo - Rut: 21.795.550-5 - Paralelo: C1 - Correo Institucional: andres.hidalgo01@alumnos.ucn.cl
 
-Andres Giovanni Hidalgo Ramallo - Rut: 21.795.550-5 - Paralelo: C1
-
-Diego Javier Ravanal Vanzi - Rut: 22.228.327-2 - Paralelo: C2
+Diego Javier Ravanal Vanzi - Rut: 22.228.327-2 - Paralelo: C2 - Correo Institucional: diego.ravanal@alumnos.ucn.cl
